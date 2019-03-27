@@ -48,6 +48,27 @@ def toLines(frame):
                 if ls==False:
                     x1,y1,x2,y2=x,y,x,y
                     ls=True
+    for x in range(frame.width):
+            if lf==True:
+                linecount+=1
+                createLine(linecount,x1,y1,x2,y2+0.1)
+            x1,y1,x2,y2=None,None,None,None
+            ls,lf=False,False
+            for y in range(frame.height):
+                if sourceCanvas[x,y]<=1:
+                    if ls==True:
+                        x2,y2=x,y
+                        lf=True
+                    if ls==False:
+                        x1,y1,x2,y2=x,y,x,y
+                        ls=True
+                if sourceCanvas[x,y]>1:
+                    if lf==True:
+                        linecount+=1
+                        createLine(linecount,x1,y1,x2,y2+0.1)
+                    x1,y1,x2,y2=None,None,None,None
+                    ls,lf=False,False
+
     print("Generated "+str(linecount)+" lines...")
 
 def Main():
