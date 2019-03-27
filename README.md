@@ -18,4 +18,4 @@ Place the script inside its own folder, along with any files you wish to convert
 
 ## Help
 
-If you need help getting this script to work, feel free to ask for help on the [Line Rider Community Discord](https://discord.gg/H47JzZK)
+If you need help getting this script to work, feel free to ask for help on the [Line Rider Community Discord](https://discord.gg/H47JzZK) in #developing or contact me directly on discord (**Ollie#1153**)
