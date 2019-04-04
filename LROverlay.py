@@ -22,6 +22,7 @@ def saveTrack(filename):
 def toLines(frame):
     print("Converting image to lines...")
     global linecount
+    linecount = 0
     sourceCanvas=frame.load()
     x1,y1,x2,y2=None,None,None,None
     ls,lf=False,False
@@ -71,17 +72,20 @@ def toLines(frame):
 
     print("Generated "+str(linecount)+" lines...")
 
+def convertImage(file):
+    global trackData
+    trackData={"label":"Generated with code written by OllieMBM","creator":"Ollie","description":"Powered by Python","duration":0,"version":"6.2","startPosition":{"x":-0,"y":0},"lines":[]}
+    filename = file.split(".")[0]
+    frame=Image.open(file).convert("1")
+    toLines(frame)
+    saveTrack(filename)
+
 def Main():
+    global trackData
     for file in os.listdir():
         if file.endswith(".jpg"):
-            filename = file.split(".")[0]
-            frame=Image.open(file).convert("1")
-            toLines(frame)
-            saveTrack(filename)
+            convertImage(file)
         if file.endswith(".png"):
-            filename = file.split(".")[0]
-            frame=Image.open(file).convert("1")
-            toLines(frame)
-            saveTrack(filename)
+            convertImage(file)
 Main()
     
