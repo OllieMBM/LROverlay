@@ -5,10 +5,10 @@ trackData={"label":"Generated with code written by OllieMBM","creator":"Ollie","
 linecount=0
 
 def createLine(idno,x1,y1,x2,y2):
-    x1=x1/10
-    y1=y1/10
-    x2=x2/10
-    y2=y2/10
+    x1=x1*2
+    y1=y1*2
+    x2=x2*2
+    y2=y2*2
     newLine={"id":idno,"type":2,"x1":int(x1),"y1":int(y1),"x2":int(x2),"y2":int(y2)}
     trackData['lines'].append(newLine)
 
