@@ -1,3 +1,6 @@
+You can download the latest release for this tool [here](https://github.com/OllieMBM/LROverlay/releases).
+If you have trouble running the latest release please follow the installation instructions below.
+
 # Line Rider Overlay
 
 Line Rider Overlay is a simple python script that converts .png or .jpg images into .json track files.
