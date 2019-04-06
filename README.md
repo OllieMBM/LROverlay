@@ -17,7 +17,9 @@ pip install pillow
 
 ## Usage
 
-Place the script or executable inside its own folder, along with any files you wish to convert (**.png** or **.jpg** only).  Double click to run and a .json track file with the same name as the input file will be produced.
+Place the script or executable inside its own folder, along with any files you wish to convert (**.png** or **.jpg** only).  
+
+Double click to run and a .json track file with the same name as the input file will be produced.
 
 ## Examples
 
