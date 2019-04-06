@@ -1,4 +1,5 @@
 # Line Rider Overlay
+[Source Code](https://www.github.com/OllieMBM/LROverlay-Source)
 
 Line Rider Overlay is a simple tool that converts .png or .jpg images into .json track files, allowing creators to quickly create detailed scenery for their Line Rider tracks.
 
