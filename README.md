@@ -1,20 +1,16 @@
 # Line Rider Overlay
 
-Line Rider Overlay is a simple python script that converts .png or .jpg images into .json track files.
-
-## Installation
-
-Download and install the latest version of [Python](https://www.python.org/downloads/)
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) via the command line to install Pillow
-
-```bash
-pip install pillow
-```
+Line Rider Overlay is a simple tool that converts .png or .jpg images into .json track files, allowing creators to quickly create detailed scenery for their Line Rider tracks.
 
 ## Usage
 
-Place the script inside its own folder, along with any files you wish to convert (**.png** or **.jpg** only).  The script will create a .json track file with the same name as the input file.
+Place LROverlay.exe inside its own folder, along with any files you wish to convert (**.png** or **.jpg** only).  Run the file to create a .json track file with the same name as the input file.
+
+Once the track file has been generated, place it inside a folder in your Tracks directory and open it in [Line Rider Advanced](https://linerideradvanced.com/)
+
+## Help
+
+Having trouble getting this to work?  Download the source code [here](https://www.github.com/OllieMBM/LROverlay-Source) and follow the installation instructions.  If you still need help, refer to the Help section on the link above.
 
 ## Examples
 
@@ -23,7 +19,3 @@ Place the script inside its own folder, along with any files you wish to convert
 ![Example 3](https://i.imgur.com/iK0fpIz.png)
 ![Example 4](https://i.imgur.com/YFCBvwr.png)
 ![Example 5](https://i.imgur.com/lhCAkys.png)
-
-## Help
-
-If you need help getting this script to work, feel free to ask for help on the [Line Rider Community Discord](https://discord.gg/H47JzZK) in #developing or contact me directly on discord (**Ollie#1153**)
