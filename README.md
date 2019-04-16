@@ -3,7 +3,7 @@ If you have trouble running the latest release please follow the installation in
 
 # Line Rider Overlay
 
-Line Rider Overlay is a simple python script that converts .png or .jpg images into .json track files.
+Line Rider Overlay is a simple python script that converts images into .json track files.
 
 ## Installation
 
