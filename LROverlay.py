@@ -1,5 +1,6 @@
 import os, json
 from PIL import Image
+import linedraw
 
 trackData={"label":"Generated with code written by OllieMBM","creator":"Ollie","description":"Powered by Python","duration":0,"version":"6.2","startPosition":{"x":-0,"y":0},"lines":[]}
 linecount=0
@@ -72,20 +73,53 @@ def toLines(frame):
 
     print("Generated "+str(linecount)+" lines...")
 
-def convertImage(file):
+def ditherImage(file):
     global trackData
     trackData={"label":"Generated with code written by OllieMBM","creator":"Ollie","description":"Powered by Python","duration":0,"version":"6.2","startPosition":{"x":-0,"y":0},"lines":[]}
-    filename = file.split(".")[0]
     frame=Image.open(file).convert("1")
     toLines(frame)
-    saveTrack(filename)
+
+def contourImage(file):
+    sf = 0.5
+    lines = linedraw.sketch(file)
+    linecount = 0
+    for group in lines:
+        for (x0,y0,x1,y1) in linemaker(group):
+            linecount += 1
+            createLine(linecount,x0*sf,y0*sf,x1*sf,y1*sf)
+
+def linemaker(group):
+    is_first = True
+    x0 = y0 = 0
+    for (x,y) in group:
+        if is_first:
+            x0 = x
+            y0 = y
+            is_first = False
+        else:
+            yield x0,y0,x,y
+            x0,y0 = x,y
 
 def Main():
     global trackData
-    for file in os.listdir():
-        if file.endswith(".jpg"):
-            convertImage(file)
-        if file.endswith(".png"):
-            convertImage(file)
+    mode = input('''SELECT MODE:
+    1. DITHER (Fast, less detail)
+    2. CONTOUR (Slow, more detail)
+    3. DITHER + CONTOUR (Slowest, most detail)
+
+''')
+    file = input("ENTER FILE NAME: ")
+    if mode == "1":
+        ditherImage(file)
+    elif mode == "2":
+        contourImage(file)
+    elif mode == "3":
+        ditherImage(file)
+        contourImage(file)
+    else:
+        print("Invalid Mode")
+
+    filename = file.split(".")[0]
+    saveTrack(filename)                       
+               
 Main()
-    
