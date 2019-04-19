@@ -9,10 +9,13 @@ Line Rider Overlay is a simple python script that converts images into .json tra
 
 Download and install the latest version of [Python](https://www.python.org/downloads/)
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) via the command line to install Pillow
+Use the package manager [pip](https://pip.pypa.io/en/stable/) via the command line to install Pillow and OpenCV
 
 ```bash
 pip install pillow
+```
+```bash
+pip install opencv-python
 ```
 
 ## Usage
